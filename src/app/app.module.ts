@@ -16,7 +16,7 @@ import { BooleanATextoPipe } from './pipes/boolean-a-texto.pipe';
   declarations: [
     AppComponent,
     NavbarComponent,
-    ReactiveFormsModule,
+
     FormularioComponent,
     DemoTableComponent,
     DemoCardComponent,
@@ -25,6 +25,7 @@ import { BooleanATextoPipe } from './pipes/boolean-a-texto.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule
