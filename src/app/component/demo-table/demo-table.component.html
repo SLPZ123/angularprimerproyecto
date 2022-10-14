@@ -1,0 +1,60 @@
+<h1>Cursos Disponibles</h1>
+<div class="row">
+    <mat-form-field class="col-md-6">
+        <mat-label>Filtrar por nombre de curso</mat-label>
+        <input type="text" matInput (keyup)="filtrarCurso">
+    </mat-form-field>
+    <mat-form-field class="col-md-6">
+        <mat-label>Filtrar por numero de comision</mat-label>
+        <input type="text" matInput (keyup)="filtrarComision">
+    </mat-form-field>
+</div>
+<div class="row">
+<table mat-table [dataSource]="dataSource" class="col-md-12">
+<!--nombre-->
+    <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDeff>Nombre</th>
+        <td mat-cell *matCellDef="let curso">{{curso.nombre}}</td>
+    </ng-container>
+    <!--'comision'-->
+    <ng-container matColumnDef="comision">
+        <th mat-header-cell *matHeaderCellDeff>comision</th>
+        <td mat-cell *matCellDef="let curso">{{curso.comision}}</td>
+    </ng-container>
+    <!--'profesor'-->
+    <ng-container matColumnDef="profesor">
+        <th mat-header-cell *matHeaderCellDeff>profesor</th>
+        <td mat-cell *matCellDef="let curso">{{curso.profesor}}</td>
+    </ng-container>
+    <!--'fechaInicio'-->
+    <ng-container matColumnDef="fechaInicio">
+        <th mat-header-cell *matHeaderCellDeff>Inicio</th>
+        <td mat-cell *matCellDef="let curso">{{curso.fechaInicio}}</td>
+    </ng-container>
+    <!--'fechaFin'-->
+    <ng-container matColumnDef="fechaFin">
+        <th mat-header-cell *matHeaderCellDeff>Fin</th>
+        <td mat-cell *matCellDef="let curso">{{curso.fechaFin}}</td>
+    </ng-container>
+    <!--'inscripcionAbierta'-->
+    <ng-container matColumnDef="inscripcionAbierta">
+        <th mat-header-cell *matHeaderCellDeff>inscripcionAbierta</th>
+        <td mat-cell *matCellDef="let curso">{{curso.inscripcionAbierta}}</td>
+    </ng-container>
+    <!--'accion'-->
+    <ng-container matColumnDef="accion">
+        <th mat-header-cell *matHeaderCellDeff>Acciones</th>
+<td mat-cell *matCellDef>
+    <button mat-icon-button>
+        <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button>
+        <mat-icon>delete</mat-icon>
+    </button>
+</td>
+    </ng-container>
+<tr mat-header-row *matHeaderRowDef="columnas"></tr>
+<tr mat-row *matRowDef="let row,columns:columnas"></tr>
+</table>
+</div>
+
