@@ -11,6 +11,7 @@ import { DemoCardComponent } from './component/demo-card/demo-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { BooleanATextoPipe } from './pipes/boolean-a-texto.pipe';
+import { BooleanEstiloDirective } from './directive/boolean-estilo.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BooleanATextoPipe } from './pipes/boolean-a-texto.pipe';
     FormularioComponent,
     DemoTableComponent,
     DemoCardComponent,
-    BooleanATextoPipe
+    BooleanATextoPipe,
+    BooleanEstiloDirective
   ],
   imports: [
     BrowserModule,
