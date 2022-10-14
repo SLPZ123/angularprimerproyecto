@@ -1,24 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { FormularioComponent } from './component/demo-formulario/demo-form.component';
 import { DemoTableComponent } from './component/demo-table/demo-table.component';
 import { DemoCardComponent } from './component/demo-card/demo-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { BooleanATextoPipe } from './pipes/boolean-a-texto.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    ReactiveFormsModule,
+    FormularioComponent,
     DemoTableComponent,
-    DemoCardComponent
+    DemoCardComponent,
+    BooleanATextoPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     MaterialModule
   ],

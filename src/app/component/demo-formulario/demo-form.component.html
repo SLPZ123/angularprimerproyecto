@@ -1,0 +1,61 @@
+<div class="container">
+    <h1 class="my-5">Formulario Reactivo</h1>
+
+
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="formulario" (ngSubmit)="submitForm()">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group mb-3">
+                            <input  type="text" [ngClass]="{'form-control' : true, 'is-invalid': formulario.get('nombre')?.errors && formulario.get('nombre')?.touched}" formControlName="nombre" placeholder="Nombre" aria-label="Nombre">
+                            <div class="invalid-feedback">
+                               <small *ngIf="formulario.get('nombre')?.errors?.['required'] && formulario.get('nombre')?.touched">Este campo es obligatorio</small> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group mb-3">
+                            <input type="text" [ngClass]="{'form-control' : true, 'is-invalid': formulario.get('apellido')?.errors && formulario.get('apellido')?.touched}" formControlName="apellido" placeholder="Apellido" aria-label="Apellido">
+                            <div class="invalid-feedback">
+                               <small *ngIf="formulario.get('apellido')?.errors?.['required'] && formulario.get('apellido')?.touched">Este campo es obligatorio</small> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group mb-3">
+                            <input type="text" [ngClass]="{'form-control' : true, 'is-invalid': formulario.get('edad')?.errors && formulario.get('edad')?.touched}" formControlName="edad" placeholder="Edad" aria-label="Edad">
+                            <div class="invalid-feedback">
+                               <small *ngIf="formulario.get('edad')?.errors?.['required'] && formulario.get('edad')?.touched">Este campo es obligatorio</small> 
+                               <small *ngIf="formulario.get('edad')?.errors?.['min'] && formulario.get('edad')?.touched">Debes tener entre 16 y 99 años</small>
+                               <small *ngIf="formulario.get('edad')?.errors?.['max'] && formulario.get('edad')?.touched">Debes tener entre 16 y 99 años</small>
+                               <small *ngIf="formulario.get('edad')?.errors?.['pattern'] && formulario.get('edad')?.touched">Solo se permiten ingresar numeros</small>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group mb-3">
+                            <input type="email" [ngClass]="{'form-control' : true, 'is-invalid': formulario.get('email')?.errors && formulario.get('email')?.touched}" formControlName="email" placeholder="E-mail" aria-label="E-mail">
+                            <div class="invalid-feedback">
+                               <small *ngIf="formulario.get('email')?.errors?.['required'] && formulario.get('email')?.touched">Este campo es obligatorio</small> 
+                               <small *ngIf="formulario.get('email')?.errors?.['email'] && formulario.get('email')?.touched">El formato de e-mail no es correcto</small> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <button type="submit" [disabled]="!formulario.valid" class="btn btn-dark">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</div>
