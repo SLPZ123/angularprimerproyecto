@@ -1,36 +1,39 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './component/navbar/navbar.component';
-import { FormularioComponent } from './component/demo-formulario/demo-form.component';
-import { DemoTableComponent } from './component/demo-table/demo-table.component';
-import { DemoCardComponent } from './component/demo-card/demo-card.component';
+import { LoginComponent } from './component/login/login.component';
+import { NavbarComponent } from './component/demo-navbar/demo-navbar.component';
+import { ToolbarComponent } from './component/demo-toolbar/toolbar.component';
+import { StudentComponent } from './component/student/student.component';
+import { FormularioComponent} from './component/formulario/formulario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
-import { BooleanATextoPipe } from './pipes/boolean-a-texto.pipe';
+import { NombreApellidoPipe } from './pipes/nombre-apellido.pipe';
 import { BooleanEstiloDirective } from './directive/boolean-estilo.directive';
+import { FormularioAltaAlumnoComponent } from './component/formulario-alta-alumno/formulario-alta-alumno.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-
+    ToolbarComponent,
+    StudentComponent,
+    FormularioAltaAlumnoComponent,
+    NombreApellidoPipe,
+    BooleanEstiloDirective,
     FormularioComponent,
-    DemoTableComponent,
-    DemoCardComponent,
-    BooleanATextoPipe,
-    BooleanEstiloDirective
+    LoginComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
