@@ -1,8 +1,10 @@
 export interface Alumno{
-    id: number;
+    idStudent: number;
     nombre: string;
     apellido: string;
-    curso: string;
+    fechaNacimeinto:Date;
+    fechaAlta:Date;
     edad: number;
     dni: number;
+    deleted:boolean;
 }

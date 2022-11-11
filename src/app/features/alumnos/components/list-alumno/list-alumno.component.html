@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <h3>Alumno</h3>
+    <div class="row justify-content-md-center">
+        <div class="col-10">
+            <table mat-table[dataSource] class="table table-hover">
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"></th>
+                    <td mat-cell *matCellDef="let alumno">{{alumno.idAlumno}}</td>
+                </ng-container>
+                <ng-container matColumnDef="dni">
+                    <th mat-header-cell *matHeaderDef class="text-center"></th>
+                    <td mat-cell *matCellDef="let alumno">{{alumno.dni}}</td>
+                </ng-container>
+                <ng-container matColumnDef="nombreCompleto">
+                    <th mat-header-cell *matHeaderDef class="text-center">Nombre Completo</th>
+                    <td mat-cell *matCellDef="let alumno">{{alumno.apellido}},{{alumno.nombre}}</td>
+                </ng-container>
+                <ng-container matColumnDef="fechaNacimiento">
+                    <th  mat-header-cell *matHeaderDef class="text-center">Fecha de nacimiento</th>
+                    <td mat-cell *matCellDef="let alumno">{{alumno.fechaNacimiento}}</td>
+                </ng-container>
+                <ng-container matColumnDef="fechaAlta">
+                    <th  mat-header-cell *matHeaderDef class="text-center">Fecha alta</th>
+                    <td mat-cell *matCellDef="let alumno">{{alumno.fechaAlta}}</td>
+                </ng-container>
+                <ng-container matColumnDef="acciones">
+                    <th mat-header-cell *matHeaderDef></th>
+                    <td mat-cell *matCellDef="let alumno">
+                    <button mat-icon-button (click)="consultar(alumno.idAlumno)">
+                    <mat-icon color="accent">search</mat-icon>
+                </button>
+                <button mat-icon-button (click)="editar(alumno.idAlumno)">
+                    <mat-icon color="primary">edit</mat-icon>
+                </button>
+                <button mat-icon-button (click)="eliminar(alumno.idAlumno)">
+                    <mat-icon color="primary">delete</mat-icon>
+                </button>
+            </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="columnasAlumno"></tr>
+                <tr mat-row *matRowDef="let row;columns:columnasAlumno"></tr>
+
+            </table>
+            <div>
+                <mat-paginator [pageSizeOptions]="5,10,20,50" 
+                showFirstLastButtons aria-label="Select page of periodic elements"></mat-paginator>
+            </div>
+        </div>
+    </div>
+</div>

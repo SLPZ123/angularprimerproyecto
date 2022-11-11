@@ -6,6 +6,7 @@ import { PaginaNoEncontradaComponent } from './core/components/pagina-no-encontr
 const rutas: Routes = [
     { path: 'inicio', component: InicioComponent },
     { path: '', redirectTo: 'inicio', pathMatch: 'full'},
+    {path:"features",loadChildren:()=>import("").then((m)=>m.Features.module),},
     { path: '**', component: PaginaNoEncontradaComponent }
 ]
 
